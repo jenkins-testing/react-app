@@ -7,7 +7,6 @@ pipeline {
     }
     environment {
         CI = 'true'
-        MTFA_MOUNT_POINT = '/mtfa'
     }
     stages {
         stage('Build') {

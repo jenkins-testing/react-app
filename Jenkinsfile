@@ -7,6 +7,7 @@ pipeline {
     }
     environment {
         CI = 'true'
+        MTFA_MOUNT_POINT = '/mtfa'
     }
     stages {
         stage('Build') {
@@ -17,6 +18,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                echo "Mount point ${env.MTFA_MOUNT_POINT}"
                 sh './scripts/test.sh'
             }
         }
